@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+<!-- <div class="container">
+
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Index</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: users">
+			<tr>
+				<td data-bind="text: $index"></td>
+				<td data-bind="text: name "></td>
+			</tr>
+		</tbody>
+	</table>	
+	<input type="text" id="newUser">
+	<button class="btn btn-primary" data-bind="click: addUser">Add User</button>
+</div> -->
+
+	<div.class="container">
+		<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Index</th>
+							<th>Name</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: users">
+						<tr>
+							<td data-bind="text: $index"></td>
+							<td data-bind="text: name"></td>
+							<td><span class="btn btn-danger" data-bind="click: $parent.removeUser">Remove User</span></td>
+						</tr>
+					</tbody>
+				</table>	
+				<input type="text" id="newUser">	
+				<button class="btn btn-primary" data-bind="click: addUser">Add User</button>
+	</div>
+
+<script>
+	// function viewModel(){
+	// 	this.users = ko.observableArray([
+	// 			{name: "Mayank"},
+	// 			{name: "knayaM"},
+	// 			{name: "Khajanchi"},
+	// 			{name: "ihcnajahK"}
+	// 	]);
+	// 	this.addUser = function(){
+	// 		this.users.push({name: $("#newUser").val()});
+	// 	}
+	// }
+	// ko.applyBindings(new viewModel());
+	function viewModel(){
+		var self = this;
+		self.users = ko.observableArray([
+				
+			]);
+		self.addUser = function(){
+			self.users.push({name: $("#newUser").val()});
+		}
+		self.removeUser = function(){
+			self.users.remove(this);
+		}
+	}
+	ko.applyBindings(new viewModel());
+
+</script>
+</body>
+</html>
