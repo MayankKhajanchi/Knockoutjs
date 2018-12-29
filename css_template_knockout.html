@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+	<style>
+		
+		.cssTemp{color: red;}	/* here, the class highAmount is giver text color red */
+	
+	</style>
+<body>
+	<div class="container">
+		<div data-bind="css: {cssTemp: amount() > 10}">Hello World</div> <!-- here, css is bound to this div. class - cssTemp will be applied to this div if amount() is > 10. -->
+	</div>
+	<script>
+		var viewModel = {
+			amount: ko.observable(9) // initially, the amount is set to 9. so cssTemp is not applied
+		}
+		viewModel.amount(11); // when the amount is set to > 10, cssTemp is applied
+		ko.applyBindings(viewModel)
+	</script>
+</body>
+</html>

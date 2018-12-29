@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<div data-bind="html: htmlTemp"></div>		
+	</div>
+	<script>
+		var viewModel = {
+			htmlTemp: ko.observable()
+		}
+		viewModel.htmlTemp("<h1>Hello World</h1><p>This is my first html template made using knockout js</p>");
+		ko.applyBindings(viewModel);
+	</script>
+
+</body>
+</html>
