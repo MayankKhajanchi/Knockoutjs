@@ -14,6 +14,7 @@
 <body>
 	<div class="container">
 		<div data-bind="css: {cssTemp: amount() > 10}">Hello World</div> <!-- here, css is bound to this div. class - cssTemp will be applied to this div if amount() is > 10. -->
+		<div data-bind="css: {cssTemp: true}">Hello World</div> <!-- here, css is bound to this div. class - cssTemp will be applied to this div when the value is true -->
 	</div>
 	<script>
 		var viewModel = {
