@@ -17,16 +17,21 @@
 							<th>Name</th>
 						</tr>
 					</thead>
-					<tbody data-bind="foreach: users">
+					<tbody data-bind="foreach: users"> <!-- here the data-bind is foreach and now tbody will go through each item in users array and generate 3 td for each item. 1 for index . 2 for name and 3 for remove button -->
 						<tr>
-							<td data-bind="text: $index"></td>
-							<td data-bind="text: name"></td>
-							<td><span class="btn btn-danger" data-bind="click: $parent.removeUser">Remove User</span></td>
+							
+							<td data-bind="text: $index"></td> <!-- here the data-bind generates text and the value is $index. $index creates numbers starting from 0  -->
+							
+							<td data-bind="text: name"></td><!-- this data-bind generates text and derives name from the users array -->
+							
+							<td><span class="btn btn-danger" data-bind="click: $parent.removeUser">Remove User</span></td> <!-- $parent points to the direct parent which is the tr containing the index, name and the remove button. Here the button Remove User is given an event handler onClick which triggers the function 'removeUser'  -->
 						</tr>
 					</tbody>
 				</table>	
-				<input type="text" id="newUser">	
-				<button class="btn btn-primary" data-bind="click: addUser">Add User</button>
+				
+				<input type="text" id="newUser">	<!-- both this line and the next line work together -->
+				
+				<button class="btn btn-primary" data-bind="click: addUser">Add User</button> <!-- this button triggers the function addUser on click which takes the value from the above input field and pushes it to the observableArray users -->
 	</div>
 
 <script>

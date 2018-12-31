@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Job</th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: employees">
+				<tr data-bind="if: name">
+					<td data-bind="text: name"></td>
+					<td data-bind="text: job"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		var employees = ko.observableArray([
+			{name: 'knayaM', job: "repoleveD beW"},
+			{name: 'Mayank', job: "Web Developer"},
+			{name: null, job: "Web Developer"}
+		]);
+		ko.applyBindings();
+	</script>
+</body>
+</html>
